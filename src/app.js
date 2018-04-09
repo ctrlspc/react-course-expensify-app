@@ -3,7 +3,7 @@ import React from 'react';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import getVisibleExpenses from './selectors/expenses';
-import {addExpense} from './actions/expenses';
+import {startSetExpenses} from './actions/expenses';
 import {setTextFilter} from './actions/filters';
 import {Provider} from 'react-redux';
 import moment from 'moment';
@@ -22,7 +22,12 @@ const wrapper = (
   </Provider>
 )
 
-ReactDOM.render(wrapper, document.getElementById('app'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(wrapper, document.getElementById('app'));
+})
 
 
 

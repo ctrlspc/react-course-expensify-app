@@ -80,3 +80,15 @@ test('should not remove an expense for invalid id', () => {
   const newState = expensesReducer( expenses, action );
   expect(newState).toEqual( expenses );
 });
+
+test('should set expenses', () => {
+  const initialState = [expenses[2]];
+  const testState = [expenses[0], expenses[1]];
+  const action = {
+    type:'SET_EXPENSES',
+    expenses:testState
+  };
+
+  const newState = expensesReducer( initialState, action );
+  expect(newState).toEqual( testState );
+})
