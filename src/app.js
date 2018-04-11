@@ -7,6 +7,8 @@ import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
 import { Provider } from 'react-redux';
 import moment from 'moment';
+import LoadingPage from './components/LoadingPage';
+
 
 import 'normalize.css/normalize.css'; //reset browser css so that we are starting from same place
 import './styles/styles.scss';
@@ -22,7 +24,7 @@ const wrapper = (
   </Provider>
 )
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 let hasRendered = false;
 const renderApp = () => {
