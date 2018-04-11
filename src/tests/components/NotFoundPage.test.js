@@ -5,4 +5,4 @@ import NotFoundPage from '../../components/NotFoundPage';
 test('should render a NotFoundPageComponent', () => {
   const wrapper = shallow(<NotFoundPage />);
   expect(wrapper).toMatchSnapshot();
-})
+});
